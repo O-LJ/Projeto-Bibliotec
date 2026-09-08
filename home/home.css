@@ -1,36 +1,5 @@
 /* Cabecalho */
-a {
-    color: var(--branco);
-    text-decoration: none;
 
-
-}
-
-.cabecalho {
-    background-color: var(--azul-escuro);
-    display: flex;
-    /* Sentido contrário do flex */
-    justify-content: space-between;
-
-    /* Sentido do Flex */
-    align-items: center;
-
-    padding: 0 120px;
-    height: 10vh;
-    /* 10% da visualização do dispositivo */
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.navegacao a {
-    text-transform: uppercase;
-    font-size: 1em;
-    font-weight: 500;
-}
 
 /* Conteudo principal */
 
@@ -336,8 +305,8 @@ a {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     height: 100%;
-} 
-        
+}
+
 .livros-recomendados {
     display: flex;
     flex-direction: column;
