@@ -12,6 +12,8 @@
     --branco: #FFFFFF;
     --cor-destaque: #2FD6CB;
     --fundos: #e9f0ef;
+    --textos-paginas: #535353;
+    --cor-bordas: #cccccc;
 }
 
 html {
@@ -56,4 +58,151 @@ a {
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 500;
+}
+
+
+/* layout das paginas principais */
+.página-listagem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.menu-lateral {
+    background-color: var(--azul-escuro);
+    height: 100vh;
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 50px;
+
+
+}
+
+.topo-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botao-voltar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 22px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--cor-destaque);
+
+    background-color: transparent;
+    color: var(--branco);
+
+    align-self: flex-end;
+}
+
+.logo {
+    margin-top: 10%;
+    margin-bottom: 30%;
+
+    width: 40%;
+}
+
+.menu-navegacao {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.item-menu i {
+    width: 30px;
+    font-size: 1.5em;
+}
+
+.item-menu:hover {
+    color: var(--cor-destaque);
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+.item-menu.ativo {
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+.botao-sair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin-top: auto;
+}
+
+.botao-sair i {
+    width: 30px;
+}
+
+.botao-sair:hover {
+    color: var(--cor-destaque);
+}
+
+/* conteudo */
+
+.conteudo-listagem {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    padding: 30px 60px;
+    background-color: var(--branco);
+    background-image: url(../../imgs/fundo-telas.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: right bottom;
+
+    height: 100vh;
+}
+
+/* cabeçalho main */
+.cabecalho-pagina h1 {
+    font-size: 2em;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.cabecalho-pagina p {
+    font-size: 1.2em;
+    color: var(--textos-paginas);
+}
+
+/* card principal */
+
+.card-listagem {
+    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+
+    padding: 40px;
+    height: auto;
+    box-shadow:
+        inset 0 20px 50px rgba(255, 255, 255, 0.5), 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+
 }

@@ -1,0 +1,239 @@
+/* busca */
+
+.area-busca {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.campo-busca {
+    /* esse elemento pode ocupar o espaço disponível dentro do container flex */
+    flex: 1;
+    /* 
+    flex: 1; é a mesma coisa que 
+    flex-grow: 1; o elemento pode crescer quando sobra espaço
+    flex-shrink: 1; o elemento pode encolher quando necessário
+    flex-basis: 0%; fala para o elemento começar com 0% e junto com os outros pode crescer ou diminuir
+    */
+
+    height: 50px;
+    padding: 0 20px;
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: 10px;
+
+    background-color: var(--branco);
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.campo-busca i {
+    font-size: 20px;
+    color: var(--azul-escuro);
+}
+
+.campo-busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.1em;
+    color: var(--textos-paginas);
+}
+
+/* filtro */
+
+.botao-filtro {
+    height: 50px;
+    width: 15%;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: 10px;
+
+    background-color: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    color: var(--texto);
+
+    font-size: 1em;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-filtro i {
+    font-size: 20px;
+    color: var(--texto);
+}
+
+.botao-filtro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+
+}
+
+.cabecalho-lista {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+
+    padding: 0 20px 20px;
+
+    font-weight: 700;
+
+}
+
+
+/* alinhando o nome à esquerda */
+
+.cabecalho-lista h2:nth-child(1) {
+    text-align: left;
+
+}
+
+/* alinhando o restante ao centro */
+
+.cabecalho-lista h2 {
+    text-align: center;
+    font-size: 1em;
+
+}
+
+/* Lista de livros */
+
+.lista-livros {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.livro {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+
+    align-items: center;
+    justify-items: center;
+
+    height: 60px;
+    padding: 0 30px;
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: 10px;
+
+    font-size: 1em;
+}
+
+.livro p:nth-child(1) {
+    justify-self: flex-start;
+}
+
+/* checkbox */
+
+input[type=checkbox] {
+    height: 30px;
+    width: 30px;
+
+    border: 1px solid var(--textos-paginas);
+    border-radius: 5px;
+
+    accent-color: var(--cor-destaque);
+
+
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--cor-destaque);
+    border: none;
+}
+
+input[type=checkbox]:checked::after {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+    color: var(--branco);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.botao-acao {
+    border: none;
+    background-color: transparent;
+    color: var(--textos-paginas);
+
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.botao-acao:hover {
+    color: var(--cor-destaque);
+    transform: translateY(-1px);
+    cursor: pointer;
+
+}
+
+.rodape-listagem {
+    margin-top: 30px;
+    padding-top: 10px;
+
+    border-top: 1px solid var(--cor-bordas);
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.quantidade-livros {
+    font-size: 0.8em;
+    color: var(--textos-paginas);
+    font-weight: 600;
+}
+
+.paginacao {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.botao-pagina {
+border: none;
+background-color: transparent;
+}
+
+.pagina-atual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+
+    font-size: 0.8em;
+    font-weight: 700;
+}
