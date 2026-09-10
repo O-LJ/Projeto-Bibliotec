@@ -1,33 +1,32 @@
-/* Cabecalho */
+/* Conteúdo principal */
 
-
-/* Conteudo principal */
-
-/* primeiro banner */
-
+/* Primeiro banner */
 .banner-principal {
     color: var(--branco);
-
 
     height: 70vh;
 
     background-image: url(../imgs/banner-principal-home.png);
     background-size: cover;
 
+    /* overflow: hidden;  evita que os elementos transbordem */
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 120px;
 }
 
 .texto-banner {
     height: 100%;
+
     display: flex;
     flex-direction: column;
 
     align-items: flex-start;
-
     justify-content: center;
+
     gap: 50px;
 }
 
@@ -38,6 +37,7 @@
 
 .botao {
     padding: 20px 50px;
+
     border-radius: 10px;
 
     background-color: var(--cor-destaque);
@@ -49,16 +49,18 @@
     text-transform: uppercase;
 }
 
+.botao:hover {
+    background-color: #2ab2ab;
+    color: var(--branco);
+    /* cursor: pointer; */
+}
+
 .banner-principal img {
     align-self: flex-end;
     width: 35%;
 }
 
-.botao:hover {
-    background-color: #2ab2ab;
-    color: var(--branco);
-    cursor: pointer;
-}
+/* Titulo das seções */
 
 .titulo-secao {
     display: flex;
@@ -78,12 +80,11 @@
     background-color: var(--cor-destaque);
 }
 
-/* importante (ignorar//temp) */
-
-/* secao beneficios */
+/* Seção Benefícios */
 
 .beneficios {
     padding: 50px 120px;
+
     display: flex;
     flex-direction: column;
 
@@ -95,6 +96,7 @@
 
 .beneficios-lista {
     display: grid;
+
     grid-template-columns: repeat(3, 20%);
     gap: 10%;
 
@@ -109,15 +111,18 @@
     justify-content: center;
 
     padding: 80px 20px 50px;
+    /* em cima -> direita e esquerda -> embaixo */
 
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+    /* x -> y -> blur -> cor com transparência */
 
     text-align: center;
 
-    /* cria referencia de posicionamento para o icone, quando o icone for posicionado, usa esse card como referencia, sem isso,
-     o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout */
+    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, uas esse card como referência. */
+
+    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout. */
     position: relative;
 }
 
@@ -131,19 +136,27 @@
     background-color: var(--branco);
     border-radius: 50%;
 
-    width: 35%;
+    width: 30%;
     height: 30%;
 
+    /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
     position: absolute;
+
+    /* Move o círculo para cima, o valor negativo faz ele sair parcialmente do card */
     top: -15%;
 
+    /* Coloca o começo do elemento em 50% da largura do card */
     left: 50%;
 
+    /* ajustamos o posicionamento do elemento, mas a borda esquerda do círculo fica no centro, não o círculo inteiro */
+    /* por isso usamos transform: translateX(-50%); que move o próprio círculo para a esquerda em 50% da largura dele, fazendo com que o círculo fique perfeitamente centralizado. */
     transform: translateX(-50%);
 
     display: grid;
     place-items: center;
 
+    /* place-items: center; é a mesma coisa que colocar: 
+        align-itens: center e justify-items: center; */
 }
 
 .beneficio h3 {
@@ -151,193 +164,284 @@
     margin-bottom: 30px;
     text-transform: uppercase;
     width: 90%;
-
 }
 
 .beneficio p {
     font-size: 1em;
     width: 80%;
-
 }
 
 /* Banner meio */
-
 .banner-meio {
     height: 60vh;
     background-image: url(../imgs/Banner\ centro.svg);
     background-size: cover;
-    /* background-repeat: no-repeat; --> Para não repetir */
+    /* background-repeat: no-repeat; */
 
     display: flex;
     justify-content: flex-end;
 
-    padding: 0, 120px;
+    padding: 0 120px;
     color: var(--branco);
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    background-color: var(--azul-escuro);
-    color: var(--branco);
-    height: 60vh;
-}
+/* Acervo */
 
-
-
-.footer-final {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-
-.footer h3 {
-    font-weight: 200;
-    margin-left: 30px;
-    margin-top: 40px;
-
-}
-
-.footer h4 {
-    color: #2ab2ab;
-    font-weight: 600;
-    margin-left: 30px;
-    font-size: 120%;
-}
-
-
-
-.footer span {
-    display: flex;
-    width: 90vw;
-    height: 1px;
-    background-color: var(--branco);
-    margin-top: 110px;
-}
-
-.importante {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.logos {
+.acervo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-width: 15%;
-    margin-top: 140px;
-    gap: 105px;
-}
-
-.footer-topo {
-    display: flex;
     justify-content: space-between;
-    gap: 20px;
-}
-
-
-.info {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10%;
-    gap: 80px;
-    margin-right: 120px;
-}
-
-.coluna-info {
-    display: flex;
-    flex-direction: column;
     gap: 100px;
-}
 
-.icons-redes h4 {
-    margin-right: 50px;
-
-}
-
-.icons-redes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 15px;
-    margin-right: 120px;
-    gap: 30px;
-}
-
-.icons-redes img {
-    height: 30px;
-    width: auto;
-}
-
-.secao-recomendados {
-    padding: 50px 213px;
-    display: flex;
-    flex-direction: column;
-}
-
-.titulo-top-livros {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.titulo-top-livros h2 {
-    font-size: 1.5em;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.titulo-top-livros span {
-    display: flex;
-    width: 250px;
-    height: 4px;
-    align-items: center;
-    background-color: var(--cor-destaque);
-    margin-bottom: 100px;
+    padding: 50px 120px;
 }
 
 .livros {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    height: 100%;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 5%;
 }
 
-.livros-recomendados {
+.livro {
     display: flex;
     flex-direction: column;
+
+    justify-content: space-between;
+    gap: 20px;
+
     align-items: center;
     text-align: center;
-    background-color: transparent;
 }
 
-/* Ajuste das capas de livro */
-.livro-recomendado img {
-    height: 299px;
-    width: auto;
-    object-fit: contain;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    margin-bottom: 20px;
+.livro img {
+    height: 300px;
 }
 
-.livros-recomendados h3 {
-    font-size: 1.1em;
-    margin-bottom: 8px;
-    min-height: 44px;
+.livro h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+    width: 65%;
+}
+
+.livro-texto {
+    font-size: 0.8em;
+}
+
+/* footer - feito pelos alunos */
+
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 100px 120px 30px;
+}
+
+.main {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.livros-recomendados p {
-    font-size: 0.9em;
-    margin: 2px 0;
+.rodape-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
 }
 
-.bold {
+.rodape-informacoes {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-footer p {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+
+}
+
+.nav-footer a {
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.icones {
+    display: flex;
+    gap: 20px;
+}
+
+footer span {
+    display: flex;
+    margin: 50px 0;
+    background-color: white;
+    height: 1px;
+    width: 100%;
+}
+
+.footer-inferior {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.rodape-informacoes p {
+    color: var(--cor-destaque);
+    font-size: 1em;
     font-weight: 700;
+    width: 100%;
+}
+
+.footer-inferior {
+    display: flex;
+}
+
+/* responsividade */
+
+.botao-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-menu i {
+    font-size: 2em;
+    color: var(--branco);
+    border-radius: 10px;
+}
+
+/* responsividade com tamanho */
+@media (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+
+    .cabecalho img {
+        width: 60%;
+    }
+
+    .texto-banner h1 {
+        text-align: center;
+    }
+
+    /* beneficios */
+    .beneficios {
+        gap: 50px;
+
+        padding: 30px 0;
+
+        overflow: hidden;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 30%);
+
+        overflow-x: scroll;
+
+        padding: 50px 20px;
+
+        justify-content: flex-start;
+    }
+
+    .beneficios-lista::-webkit-scrollbar {
+        display: none;
+
+    }
+
+
+    .beneficio {
+        padding: 80px 10px 50px;
+    }
+
+    .beneficio h3 {
+        margin-bottom: 25px;
+        width: 60%;
+    }
+
+    .beneficio p {
+        width: 60%;
+    }
+
+    .banner-meio {
+        background-position: center;
+        padding: 0 50px;
+    }
+
+    .banner-meio .texto-banner {
+        align-items: flex-end;
+
+    }
+
+    .banner-meio .texto-banner p {
+        text-align: right;
+    }
+
+    /* acervo */
+
+    .livros {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        gap: 40px 20px;
+    }
+
+    .livros img {
+        max-width: 100%;
+    }
+
+    .livro h3 {
+        font-size: 1.2em;
+    }
+
+    .livro-texto {
+
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        padding: 0 40px;
+        position: relative;
+    }
+
+    .botao-menu {
+        display: flex;
+    }
+
+    .navegacao {
+        background-color: var(--azul-escuro);
+        position: absolute;
+
+        top: 10vh;
+
+        left: 0;
+
+        width: 100%;
+        height: auto;
+
+        padding: 40px;
+        border-radius: 0 0 0 30px;
+
+        flex-direction: column;
+        align-items: flex-end;
+
+        gap: 20px;
+
+
+        /* quanto maior o z index mais pra frente o elemento fica */
+        z-index: 100;
+    }
+
+
+
 }
