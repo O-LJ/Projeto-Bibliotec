@@ -509,7 +509,7 @@ footer span {
         flex-direction: row;
         justify-content: center;
         padding: 30px 30px 50px;
-        
+
     }
 
     .footer {
@@ -526,8 +526,64 @@ footer span {
         grid-template-columns: 1fr auto;
         justify-content: center;
     }
-    footer{
+
+    footer {
         padding: 5px 50px 10px;
         font-weight: 300;
+    }
+}
+
+@media(max-width: 500px) {
+    .banner-principal {
+        width: 70%;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 65%);
+    }
+
+    .beneficio-icone {
+        width: 35%;
+    }
+
+    .banner-meio {
+        background-position: 40%;
+    }
+
+    footer .footer {
+        gap: 50px;
+    }
+
+    .rodape-informacoes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rodape-logos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rodape-logos img {
+        width: 100%;
+    }
+
+    .rodape-icones {
+        display: flex;
+        gap: 10px;
+    }
+
+    .rodape-icones img {
+        width: 80%;
+    }
+
+    .footer-inferior {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer {
+        gap: 10px;
+        text-align: left;
     }
 }
