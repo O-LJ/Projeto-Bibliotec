@@ -440,8 +440,94 @@ footer span {
 
         /* quanto maior o z index mais pra frente o elemento fica */
         z-index: 100;
+
+        display: none;
     }
 
+    .navegacao.ativo {
+        display: flex;
+    }
 
+    .banner-principal {
+        height: 50vh;
 
+        padding: 30px 0 10px 0;
+
+        position: relative;
+    }
+
+    .banner-principal .texto-banner {
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .banner-principal .texto-banner h1 {
+        font-size: 2em;
+    }
+
+    .banner-principal .texto-banner {
+        display: none;
+    }
+
+    .banner-principal img {
+        width: 40%;
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 1;
+
+    }
+
+    .banner-principal .botao {
+        padding: 20px 40px;
+
+        font-size: 1.2em;
+
+        z-index: 2;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 45%);
+
+    }
+
+    .beneficios-lista img {
+        width: 40%;
+    }
+
+    .banner-meio .texto-banner {
+        display: none;
+    }
+
+    .rodape-logos {
+        flex-direction: row;
+        justify-content: center;
+        padding: 30px 30px 50px;
+        
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    footer span {
+        justify-self: center;
+        width: 90vw;
+    }
+
+    .rodape-informacoes {
+        gap: 30px;
+        grid-template-columns: 1fr auto;
+        justify-content: center;
+    }
+    footer{
+        padding: 5px 50px 10px;
+        font-weight: 300;
+    }
 }
