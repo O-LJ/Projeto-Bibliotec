@@ -12,3 +12,7 @@ menu.addEventListener("click", function () {
         navMenu.className = "navegacao";
     }
 })
+
+
+// opção com arrow function - função lambda
+menu.addEventListener(click, () =>{})
