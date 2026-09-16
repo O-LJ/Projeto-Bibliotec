@@ -1,4 +1,4 @@
-/* busca */
+/* BUSCA */
 
 .area-busca {
     display: flex;
@@ -9,14 +9,17 @@
     margin-bottom: 30px;
 }
 
+
 .campo-busca {
-    /* esse elemento pode ocupar o espaço disponível dentro do container flex */
+
+    /* esse elemento pode ocupar o espaço disponível dentro do container flex. */
     flex: 1;
+
     /* 
-    flex: 1; é a mesma coisa que 
-    flex-grow: 1; o elemento pode crescer quando sobra espaço
-    flex-shrink: 1; o elemento pode encolher quando necessário
-    flex-basis: 0%; fala para o elemento começar com 0% e junto com os outros pode crescer ou diminuir
+        flex: 1; é a mesma coisa que:
+            flex-grow: 1; o elemento pode crescer quando sobra espaço.
+            flex-shrink: 1; o elemento pode encolher quando não existe espaço suficiente.
+            flex-basis: 0%; fala para o elemento começar do 0% e junto com os outros, pode crescer ou diminuir.
     */
 
     height: 50px;
@@ -40,14 +43,18 @@
 
 .campo-busca input {
     flex: 1;
+
     border: none;
     outline: none;
-    font-family: inherit;
+
+    height: 100%;
+
+    font-family: inherit; /* estamos dizendo para herdar a fonte do pai */
     font-size: 1.1em;
     color: var(--textos-paginas);
 }
 
-/* filtro */
+/* FILTRO */
 
 .botao-filtro {
     height: 50px;
@@ -72,7 +79,6 @@
     font-weight: 600;
 
     cursor: pointer;
-
     transition: 0.2s;
 }
 
@@ -83,117 +89,92 @@
 
 .botao-filtro:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
 .cabecalho-lista {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr repeat(4, 1fr);
     align-items: center;
-
-    padding: 0 20px 20px;
-
+    padding: 0 20px;
     font-weight: 700;
-
 }
-
-
-/* alinhando o nome à esquerda */
 
 .cabecalho-lista h2:nth-child(1) {
     text-align: left;
-
 }
-
-/* alinhando o restante ao centro */
 
 .cabecalho-lista h2 {
     text-align: center;
     font-size: 1em;
-
+    margin-bottom: 20px;
 }
-
-/* Lista de livros */
 
 .lista-livros {
     display: flex;
     flex-direction: column;
-
     gap: 20px;
 }
 
 .livro {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-
+    grid-template-columns: 2fr repeat(4, 1fr);
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-
     height: 60px;
     padding: 0 30px;
-
     border: 1px solid var(--cor-bordas);
     border-radius: 10px;
+    font-size: 1m;
+}
 
-    font-size: 1em;
+.livro p {
+    justify-self: center;
+    text-align: center;
 }
 
 .livro p:nth-child(1) {
     justify-self: flex-start;
 }
 
-/* checkbox */
-
-input[type=checkbox] {
-    height: 30px;
-    width: 30px;
-
-    border: 1px solid var(--textos-paginas);
-    border-radius: 5px;
-
-    accent-color: var(--cor-destaque);
-
-
-    appearance: none;
-    cursor: pointer;
+.aguardando {
+    color: #D34A00;
 }
 
-input[type=checkbox]:checked {
+.retirado {
+    color: #00A223;
+}
+
+input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--textos-paginas);
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    justify-self: center;
+}
+
+input[type="checkbox"]:checked {
     background-color: var(--cor-destaque);
     border: none;
 }
 
-input[type=checkbox]:checked::after {
-    content: "✓";
+input[type="checkbox"]:checked::after {
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
     height: 100%;
     width: 100%;
-
+    content: "✓";
     color: var(--branco);
     font-size: 20px;
     font-weight: 800;
 }
 
 
-.botao-acao {
-    border: none;
-    background-color: transparent;
-    color: var(--textos-paginas);
-
-    font-size: 25px;
-    transition: 0.3s;
-}
-
-.botao-acao:hover {
-    color: var(--cor-destaque);
-    transform: translateY(-1px);
-    cursor: pointer;
-
-}
+/* RODAPÉ DA LISTAGEM */
 
 .rodape-listagem {
     margin-top: 30px;
@@ -212,6 +193,8 @@ input[type=checkbox]:checked::after {
     font-weight: 600;
 }
 
+/* PAGINAÇÃO */
+
 .paginacao {
     display: flex;
     align-items: center;
@@ -221,6 +204,11 @@ input[type=checkbox]:checked::after {
 .botao-pagina {
     border: none;
     background-color: transparent;
+
+    color: var(--textos-paginas);
+    font-size: 15px;
+
+    cursor: pointer;
 }
 
 .pagina-atual {
@@ -228,10 +216,10 @@ input[type=checkbox]:checked::after {
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
-
     width: 30px;
     height: 30px;
+
+    border-radius: 10px;
 
     background-color: var(--azul-escuro);
     color: var(--branco);
