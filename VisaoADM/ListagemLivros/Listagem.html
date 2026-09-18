@@ -11,7 +11,8 @@
 <link rel="shortcut icon" href="../../imgs/Icone - Bibliotec.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-<body class="página-listagem">
+
+<body class="pagina-listagem">
 
 
 
@@ -139,22 +140,47 @@
                     </button>
 
                 </article>
+                <article class="livro">
+                    <p class="nome-livro">TI para negócios</p>
+                    <input type="checkbox">
+                    <p class="categoria-livro">TI</p>
+                    <button class="botao-acao">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="botao-acao">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+
+                </article>
+                <article class="livro">
+                    <p class="nome-livro">TI para negócios</p>
+                    <input type="checkbox">
+                    <p class="categoria-livro">TI</p>
+                    <button class="botao-acao">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="botao-acao">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+
+                </article>
             </div>
             <!-- rodape da listagem -->
             <div class="rodape-listagem">
                 <p class="quantidade-livros">Mostrando 4 de 4 livros</p>
                 <div class="paginacao">
-                    <button class="botao-pagina">
+                    <button class="botao-pagina" id="pagina-anterior">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <span class="pagina-atual">1</span>
-                    <button class="botao-pagina">
+                    <button class="botao-pagina" id="proxima-pagina">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
         </section>
     </main>
-</body>
+    <script src="Listagem.js"></script>
+</body>       
 
 </html>
